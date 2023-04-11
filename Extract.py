@@ -43,11 +43,12 @@ class Extract:
                 goals_against_list.append(goals_against[j].text)
 
         self._df_seasons = pd.DataFrame({'team_name': team_name_list,
-                           'year': years_list,
-                           'total_wins': total_wins_list,
-                           'total_overtime_losses': total_ot_losses_list,
-                           'goals_for': goals_for_list,
-                           'goals_against': goals_against_list})
+                                         'year': years_list,
+                                         'total_wins': total_wins_list,
+                                         'total_losses': total_losses_list,
+                                         'total_overtime_losses': total_ot_losses_list,
+                                         'goals_for': goals_for_list,
+                                         'goals_against': goals_against_list})
 
         self._df_time = pd.DataFrame({'year': years_list})
 
