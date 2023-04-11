@@ -35,12 +35,15 @@ class Extract:
 
             for j in range(len(teams_name)):
                 team_name_list.append(teams_name[j].text)
-                years_list.append(years[j].text)
-                total_wins_list.append(total_wins[j].text)
-                total_losses_list.append(total_losses[j].text)
-                total_ot_losses_list.append(total_ot_losses[j].text)
-                goals_for_list.append(goals_for[j].text)
-                goals_against_list.append(goals_against[j].text)
+                years_list.append(int(years[j].text))
+                total_wins_list.append(int(total_wins[j].text))
+                total_losses_list.append(int(total_losses[j].text))
+                if total_ot_losses[j].text == '':
+                    total_ot_losses_list.append(0)
+                else:
+                    total_ot_losses_list.append(int(total_ot_losses[j].text))
+                goals_for_list.append(int(goals_for[j].text))
+                goals_against_list.append(int(goals_against[j].text))
 
         self._df_seasons = pd.DataFrame({'team_name': team_name_list,
                                          'year': years_list,
