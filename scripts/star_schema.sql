@@ -19,7 +19,7 @@ CREATE TABLE seasons (
   total_wins            int(10),
   total_losses          int(10),
   total_overtime_losses int(10),
-  percentage_wins       decimal(3, 0),
+  percentage_wins       float,
   goals_for             int(10),
   goals_against         int(10),
   goals_difference      int(10));
